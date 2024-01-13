@@ -35,7 +35,7 @@ function Navbar() {
     color: "white",
   });
   return (
-    <AppBar position="fixed">
+    <AppBar sx={{ boxShadow: "none" }} position="fixed">
       <StyledToolBar>
         <Typography variant="h4" sx={{ display: { xs: "none", sm: "block" } }}>
           QUIZAPP
