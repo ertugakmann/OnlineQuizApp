@@ -14,6 +14,7 @@ import styled from "@emotion/styled";
 function Sidebar() {
   const StyledList = styled(List)({
     marginBottom: "15px",
+    width: "250px",
   });
 
   return (
@@ -22,8 +23,10 @@ function Sidebar() {
       sx={{ display: { xs: "none", sm: "block" }, paddingTop: "15px" }}
     >
       <Box position="fixed">
-        <Typography variant="h3">MY QUIZS</Typography>
-        <StyledList sx={{ width: 300 }}>
+        <Typography variant="h3" sx={{ color: "#0F1035" }}>
+          MY QUIZS
+        </Typography>
+        <StyledList>
           <ListItem disablePadding>
             <ListItemButton component="a" href="#">
               <ListItemIcon>
@@ -33,7 +36,7 @@ function Sidebar() {
             </ListItemButton>
           </ListItem>
         </StyledList>
-        <StyledList sx={{ width: 300 }}>
+        <StyledList>
           <ListItem disablePadding>
             <ListItemButton component="a" href="#">
               <ListItemIcon>
@@ -43,7 +46,7 @@ function Sidebar() {
             </ListItemButton>
           </ListItem>
         </StyledList>
-        <StyledList sx={{ width: 300 }}>
+        <StyledList>
           <ListItem disablePadding>
             <ListItemButton component="a" href="#">
               <ListItemIcon>
@@ -53,7 +56,7 @@ function Sidebar() {
             </ListItemButton>
           </ListItem>
         </StyledList>
-        <StyledList sx={{ width: 300 }}>
+        <StyledList>
           <ListItem disablePadding>
             <ListItemButton component="a" href="#">
               <ListItemIcon>
@@ -63,7 +66,7 @@ function Sidebar() {
             </ListItemButton>
           </ListItem>
         </StyledList>
-        <StyledList sx={{ width: 300 }}>
+        <StyledList>
           <ListItem disablePadding>
             <ListItemButton component="a" href="#">
               <ListItemIcon>
@@ -73,7 +76,7 @@ function Sidebar() {
             </ListItemButton>
           </ListItem>
         </StyledList>
-        <StyledList sx={{ width: 300 }}>
+        <StyledList>
           <ListItem disablePadding>
             <ListItemButton component="a" href="#">
               <ListItemIcon>
@@ -83,7 +86,7 @@ function Sidebar() {
             </ListItemButton>
           </ListItem>
         </StyledList>
-        <StyledList sx={{ width: 300 }}>
+        <StyledList>
           <ListItem disablePadding>
             <ListItemButton component="a" href="#">
               <ListItemIcon>
@@ -93,7 +96,7 @@ function Sidebar() {
             </ListItemButton>
           </ListItem>
         </StyledList>
-        <StyledList sx={{ width: 300 }}>
+        <StyledList>
           <ListItem disablePadding>
             <ListItemButton component="a" href="#">
               <ListItemIcon>
