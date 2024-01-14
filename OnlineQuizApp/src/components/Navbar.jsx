@@ -44,7 +44,7 @@ function Navbar() {
           QUIZAPP
         </Typography>
         <Search>
-          <InputBase placeholder="Search..." />
+          <InputBase sx={{ width: "100%" }} placeholder="Search..." />
         </Search>
         <Icons>
           <StyledIconButton>
