@@ -22,7 +22,7 @@ function Sidebar() {
       flex={1}
       sx={{ display: { xs: "none", sm: "block" }, paddingTop: "15px" }}
     >
-      <Box position="fixed">
+      <Box>
         <Typography variant="h3" sx={{ color: "#0F1035" }}>
           MY QUIZS
         </Typography>
