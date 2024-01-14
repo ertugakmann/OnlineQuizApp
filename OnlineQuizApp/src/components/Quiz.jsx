@@ -1,6 +1,8 @@
+import styled from "@emotion/styled";
 import {
   Avatar,
   Box,
+  Button,
   Card,
   CardActions,
   CardContent,
@@ -12,18 +14,18 @@ import {
 import React from "react";
 
 function Quiz() {
+  const StyledCard = styled(Card)({
+    width: "570px",
+    backgroundColor: "whitesmoke",
+  });
+
   return (
-    <Card sx={{ maxWidth: 345, bgcolor: "whitesmoke" }}>
-      <CardHeader
-        action={<IconButton aria-label="settings"></IconButton>}
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2023"
-      />
+    <StyledCard>
+      <CardHeader title="Online Football Quiz" subheader="September 14, 2023" />
       <CardMedia
         component="img"
-        height="194"
-        image="https://an-nasihah.com/wp-content/uploads/2023/05/quiz-image.jpg"
-        alt="Paella dish"
+        height="200"
+        image="https://tennisnb.ca/wp-content/uploads/2020/04/BLOG-2099x700-quizimage-natasaadzic-gettyimages-iStock-933914672-1200x400-1.jpg"
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
@@ -32,7 +34,20 @@ function Quiz() {
           mussels, if you like.
         </Typography>
       </CardContent>
-    </Card>
+      <Button
+        sx={{
+          float: "right",
+          position: "relative",
+          top: "-15px",
+          left: "-20px",
+          borderRadius: "15px",
+          backgroundColor: "#365486",
+        }}
+        variant="contained"
+      >
+        Start
+      </Button>
+    </StyledCard>
   );
 }
 
