@@ -6,7 +6,7 @@ import { pink } from "@mui/material/colors";
 function Feed() {
   return (
     <>
-      <Box flex={4} p={2}>
+      <Box flex={5} p={2}>
         <Typography variant="h3" flexGrow={1} textAlign={"center"}>
           Popular Quizs
         </Typography>
