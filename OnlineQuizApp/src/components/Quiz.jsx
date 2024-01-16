@@ -1,14 +1,10 @@
 import styled from "@emotion/styled";
 import {
-  Avatar,
-  Box,
   Button,
   Card,
-  CardActions,
   CardContent,
   CardHeader,
   CardMedia,
-  IconButton,
   Typography,
 } from "@mui/material";
 import React from "react";
