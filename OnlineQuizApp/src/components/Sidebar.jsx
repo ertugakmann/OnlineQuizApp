@@ -7,13 +7,9 @@ function Sidebar() {
   const StyledSideBar = styled(Box)({
     backgroundColor: "white",
     paddingTop: "15px",
-    paddingLeft: "20px",
-    position: "relative",
-    left: "-8px",
+    flex: "1",
   });
-  {
-    /*Is this position true?*/
-  }
+
   return (
     <StyledSideBar>
       <Typography variant="h3" sx={{ color: "#0F1035" }}>
