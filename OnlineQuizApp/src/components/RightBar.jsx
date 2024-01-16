@@ -10,10 +10,17 @@ import {
 import React from "react";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteQuiz from "./FavoriteQuiz";
+import styled from "@emotion/styled";
 
 function RightBar() {
+  const StyledRightBar = styled(Box)({
+    flex: "1",
+    paddingTop: "2px",
+    display: { xs: "none", sm: "block" },
+  });
+
   return (
-    <Box flex={1} paddingTop={2} sx={{ display: { xs: "none", sm: "block" } }}>
+    <StyledRightBar>
       <Box>
         <Typography display="flex" justifyContent="center" variant="h4">
           Favorite Quizs
@@ -29,7 +36,7 @@ function RightBar() {
             <FavoriteIcon />
           </Avatar>
         </Box>
-        <Box marginTop={3} marginRight={1}>
+        <Box marginTop={3}>
           <FavoriteQuiz />
           <FavoriteQuiz />
           <FavoriteQuiz />
@@ -37,7 +44,7 @@ function RightBar() {
           <FavoriteQuiz />
         </Box>
       </Box>
-    </Box>
+    </StyledRightBar>
   );
 }
 
