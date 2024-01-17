@@ -17,7 +17,7 @@ function MyQuiz() {
   });
 
   return (
-    <Box flex={1} sx={{ display: { xs: "none", sm: "block" } }}>
+    <Box sx={{ display: { xs: "none", sm: "block" } }}>
       <StyledList>
         <ListItem disablePadding>
           <ListItemButton component="a" href="#">

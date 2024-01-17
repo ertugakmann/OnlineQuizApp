@@ -11,7 +11,7 @@ function Sidebar() {
   });
 
   return (
-    <StyledSideBar>
+    <StyledSideBar sx={{ display: { xs: "none", sm: "block" } }}>
       <Typography variant="h3" sx={{ color: "#0F1035" }}>
         MY QUIZS
       </Typography>

@@ -5,7 +5,7 @@ import { Box, Typography } from "@mui/material";
 function Feed() {
   return (
     <>
-      <Box bgcolor={"whitesmoke"} flex={5} p={2} pl={5.5}>
+      <Box bgcolor={"whitesmoke"} flex={5} p={2} pl={{ xs: "3px", sm: 8 }}>
         <Typography variant="h3" textAlign={"center"}>
           Popular Quizs
         </Typography>

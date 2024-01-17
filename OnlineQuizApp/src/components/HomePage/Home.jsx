@@ -9,7 +9,7 @@ function Home() {
   return (
     <Box sx={{ paddingTop: "56px" }}>
       <Navbar />
-      <Stack direction="row" spacing={3} justifyContent={"space-between"}>
+      <Stack direction="row" justifyContent={"space-between"}>
         <Sidebar />
         <Feed />
         <RightBar />

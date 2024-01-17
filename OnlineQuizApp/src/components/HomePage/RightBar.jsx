@@ -1,12 +1,4 @@
-import {
-  Avatar,
-  Box,
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  Typography,
-} from "@mui/material";
+import { Avatar, Box, Typography } from "@mui/material";
 import React from "react";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteQuiz from "./FavoriteQuiz";
@@ -21,7 +13,7 @@ function RightBar() {
 
   return (
     <StyledRightBar>
-      <Box>
+      <Box sx={{ display: { xs: "none", sm: "block" } }}>
         <Typography display="flex" justifyContent="center" variant="h4">
           Favorite Quizs
         </Typography>
