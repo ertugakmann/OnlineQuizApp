@@ -7,9 +7,19 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-import styled from "@emotion/styled";
+import { useState } from "react";
+import CreateQuestion from "./CreateQuestion";
 
 function CreateFeed() {
+  const [inputValue, setInputValue] = useState("");
+  const [show, setShow] = useState(false);
+
+  const handleStart = () => {
+    if (inputValue !== "") {
+      setShow(true);
+    }
+  };
+
   return (
     <Box
       sx={{ backgroundColor: { xs: "white", sm: "whitesmoke" } }}
@@ -21,29 +31,40 @@ function CreateFeed() {
       </Typography>
       <Card sx={{ minWidth: 500 }}>
         <CardContent>
-          <Typography variant="h5" fontFamily={"Lato"}>
-            Create a Quiz
-          </Typography>
-          <Box>
-            <TextField
-              id="outlined-basic"
-              placeholder="Enter Your Quiz Name..."
-              variant="outlined"
-              sx={{ marginTop: "20px" }}
-            />
-            <Button
-              sx={{
-                backgroundColor: "#365486",
-                height: "35px",
-                borderRadius: "10px",
-                marginTop: "30px",
-                marginLeft: "100px",
-              }}
-              variant="contained"
-            >
-              Let's Start
-            </Button>
-          </Box>
+          {show ? (
+            <>
+              <CreateQuestion inputValue={inputValue} />
+            </>
+          ) : (
+            <>
+              <Typography variant="h5" fontFamily={"Lato"}>
+                Create a Quiz
+              </Typography>
+              <Box>
+                <TextField
+                  id="outlined-basic"
+                  placeholder="Enter Your Quiz Name..."
+                  variant="outlined"
+                  sx={{ marginTop: "20px" }}
+                  onChange={(e) => setInputValue(e.target.value)}
+                  value={inputValue}
+                />
+                <Button
+                  sx={{
+                    backgroundColor: "#365486",
+                    height: "35px",
+                    borderRadius: "10px",
+                    marginTop: "30px",
+                    marginLeft: "100px",
+                  }}
+                  variant="contained"
+                  onClick={handleStart}
+                >
+                  Let's Start
+                </Button>
+              </Box>
+            </>
+          )}
         </CardContent>
       </Card>
     </Box>
