@@ -1,45 +1,17 @@
-import { Box, Divider, Typography, Button } from "@mui/material";
+import { Box, Divider, Typography } from "@mui/material";
 import React from "react";
-import styled from "@emotion/styled";
+import CreateOption from "./CreateOption";
 
-function CreateQuestion({ inputValue }) {
-  const StyledButton = styled(Button)({
-    backgroundColor: "#365486",
-    color: "white",
-    borderRadius: "30px",
-  });
 
+function CreateQuestion({ titleValue,question,a,b }) {
   return (
     <Box>
-      <Typography variant="h4">{inputValue}</Typography>
+      <Typography variant="h4">{titleValue}</Typography>
       <Divider />
-      <Box mt={"10px"}>
-        <Typography variant="h6">What is the rules of basketball?</Typography>
-        <Box display={"flex"} gap={10}>
-          <Box>
-            <StyledButton size="medium" variant="contained">
-              A
-            </StyledButton>
-            <Typography variant="span" fontSize={20}>
-              Rules
-            </Typography>
-          </Box>
-          <Box>
-            <StyledButton size="medium" variant="contained">
-              B
-            </StyledButton>
-            <Typography variant="span" fontSize={20}>
-              Rules
-            </Typography>
-          </Box>
-          <Box>
-            <StyledButton size="medium" variant="contained">
-              C
-            </StyledButton>
-            <Typography variant="span" fontSize={20}>
-              Rules
-            </Typography>
-          </Box>
+      <Box mt={"15px"}>
+        <Typography mt={2} sx={{textTransform:"uppercase"}} variant="h5">{question}</Typography>
+        <Box mt={2} display={"flex"} gap={10}>     
+         <CreateOption a={a} b={b} />
         </Box>
       </Box>
     </Box>

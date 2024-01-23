@@ -16,7 +16,7 @@ function Quiz() {
   });
 
   return (
-    <StyledCard>
+    <StyledCard sx={{width:{md:"250px"}}}>
       <CardHeader title="Online Football Quiz" subheader="September 14, 2023" />
       <CardMedia
         component="img"
