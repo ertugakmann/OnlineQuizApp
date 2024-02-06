@@ -1,8 +1,10 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { Box, Typography, Button } from "@mui/material";
+import { useState } from "react";
+import CreateNewQuestion from "./CreateNewQuestion";
 
-function CreateOption({ a, b }) {
+function CreateOption({ a, b, handleAddQuestion }) {
   const StyledButton = styled(Button)({
     backgroundColor: "#365486",
     color: "white",
@@ -26,7 +28,29 @@ function CreateOption({ a, b }) {
         <Typography marginLeft={1} variant="span" fontSize={20}>
           {b}
         </Typography>
-      ß</Box>
+      </Box>
+      <Box
+        sx={{
+          marginLeft: "auto",
+          display: "flex",
+          gap: "5px",
+        }}
+      >
+        <Box>
+          <StyledButton size="medium" variant="contained">
+            Add An Option
+          </StyledButton>
+        </Box>
+        <Box>
+          <StyledButton
+            onClick={handleAddQuestion}
+            size="medium"
+            variant="contained"
+          >
+            Add An Question
+          </StyledButton>
+        </Box>
+      </Box>
     </>
   );
 }
