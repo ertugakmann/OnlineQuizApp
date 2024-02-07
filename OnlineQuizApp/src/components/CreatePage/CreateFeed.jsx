@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   Box,
   Button,
@@ -6,24 +7,40 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import React from "react";
-import { useState } from "react";
-import CreateQuestion from "./CreateQuestion";
 import CreateQuiz from "./CreateQuiz";
 
 function CreateFeed() {
   const [titleValue, setTitleValue] = useState("");
   const [question, setQuestion] = useState("");
   const [show, setShow] = useState(false);
-  const [a, setA] = useState("");
-  const [b, setB] = useState("");
+  const [options, setOptions] = useState(["A", "B"]); // Initialize with A and B
 
   const handleStart = () => {
-    if (titleValue !== "") {
+    // Check if titleValue is not empty and at least two options are provided
+    if (titleValue !== "" && options.length >= 2) {
       setShow(true);
+    } else {
+      // Handle the case where the conditions are not met
+      alert("Please enter a quiz title and at least two options.");
     }
   };
 
+  const addOption = () => {
+    if (options.length < 4) {
+      const newOption = String.fromCharCode(65 + options.length);
+      setOptions([...options, newOption]);
+    } else {
+      alert("You can add up to 4 options.");
+    }
+  };
+
+  const handleOptionChange = (index, value) => {
+    setOptions((prevOptions) => {
+      const updatedOptions = [...prevOptions];
+      updatedOptions[index] = value;
+      return updatedOptions;
+    });
+  };
   return (
     <Box
       sx={{ backgroundColor: { xs: "white", sm: "whitesmoke" } }}
@@ -38,8 +55,7 @@ function CreateFeed() {
           {show ? (
             <>
               <CreateQuiz
-                a={a}
-                b={b}
+                options={options}
                 question={question}
                 titleValue={titleValue}
               />
@@ -56,8 +72,7 @@ function CreateFeed() {
                   variant="outlined"
                   sx={{ marginTop: "20px" }}
                   onChange={(e) => setTitleValue(e.target.value)}
-                  value={titleValue}
-                  fullWidth="fullWidth"
+                  fullWidth
                 />
                 <Typography mt={3} variant="h5" fontFamily={"Lato"}>
                   Enter Your Question
@@ -68,43 +83,49 @@ function CreateFeed() {
                   variant="outlined"
                   sx={{ marginTop: "20px" }}
                   onChange={(e) => setQuestion(e.target.value)}
-                  value={question}
-                  fullWidth="fullWidth"
+                  fullWidth
                 />
                 <Typography mt={3} variant="h5" fontFamily={"Lato"}>
-                  Enter Your Option
+                  Enter Your Options
                 </Typography>
                 <Box gap={2} display={"flex"}>
-                  <Typography mt={4} variant="h5">
-                    A)
-                  </Typography>
-                  <TextField
-                    id="outlined-basic"
-                    placeholder="Enter Your Option..."
-                    variant="outlined"
-                    sx={{ marginTop: "20px" }}
-                    onChange={(e) => setA(e.target.value)}
-                    value={a}
-                  />
-                  <Typography mt={4} variant="h5">
-                    B)
-                  </Typography>
-                  <TextField
-                    id="outlined-basic"
-                    placeholder="Enter Your Option..."
-                    variant="outlined"
-                    sx={{ marginTop: "20px" }}
-                    onChange={(e) => setB(e.target.value)}
-                    value={b}
-                  />
+                  {options.map((option, index) => (
+                    <React.Fragment key={index}>
+                      <Typography mt={4} variant="h5">
+                        {String.fromCharCode(65 + index)}
+                      </Typography>
+                      <TextField
+                        id={`outlined-basic-${index}`}
+                        placeholder={`Enter Option ${String.fromCharCode(
+                          65 + index
+                        )}`}
+                        variant="outlined"
+                        sx={{ marginTop: "20px" }}
+                        onChange={(e) =>
+                          handleOptionChange(index, e.target.value)
+                        }
+                        fullWidth
+                      />
+                    </React.Fragment>
+                  ))}
                 </Box>
-
                 <p>
-                  If you want to add more options,you can do it in next
-                  page!(You have to add least 2 options.)
+                  You can add up to 4 options! (You have to add at least 2
+                  options.)
                 </p>
-
-                <Box display={"flex"} justifyContent={"flex-end"}>
+                <Box gap={"10px"} display={"flex"} justifyContent={"flex-end"}>
+                  <Button
+                    sx={{
+                      backgroundColor: "#365486",
+                      height: "35px",
+                      borderRadius: "10px",
+                      marginTop: "30px",
+                    }}
+                    variant="contained"
+                    onClick={addOption}
+                  >
+                    Add Option
+                  </Button>
                   <Button
                     sx={{
                       backgroundColor: "#365486",

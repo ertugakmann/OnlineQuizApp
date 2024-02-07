@@ -14,7 +14,7 @@ function CreateQuestion({ a, b, question }) {
   return (
     <Box>
       <Divider />
-      <Box mt={"15px"}>
+      <Box>
         <Typography mt={2} sx={{ textTransform: "uppercase" }} variant="h5">
           {question}
         </Typography>

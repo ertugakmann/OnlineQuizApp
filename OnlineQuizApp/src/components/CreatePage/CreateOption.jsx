@@ -37,11 +37,6 @@ function CreateOption({ a, b, handleAddQuestion }) {
         }}
       >
         <Box>
-          <StyledButton size="medium" variant="contained">
-            Add An Option
-          </StyledButton>
-        </Box>
-        <Box>
           <StyledButton
             onClick={handleAddQuestion}
             size="medium"
