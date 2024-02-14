@@ -8,18 +8,14 @@ function RightBar() {
   const StyledRightBar = styled(Box)({
     flex: "1",
     paddingTop: "2px",
-    display: { xs: "none", sm: "block" },
   });
 
   return (
     <StyledRightBar>
       <Box sx={{ display: { xs: "none", sm: "block" } }}>
-        <Typography display="flex" justifyContent="center" variant="h4">
-          Favorite Quizs
-        </Typography>
+        <Typography variant="h4">Favorite Quizs</Typography>
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           {/* This box true there?*/}
-
           <Avatar
             sx={{
               bgcolor: "red",

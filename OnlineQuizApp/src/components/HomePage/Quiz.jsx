@@ -11,18 +11,12 @@ import React from "react";
 
 function Quiz() {
   const StyledCard = styled(Card)({
-    width: "570px",
     backgroundColor: "whitesmoke",
   });
 
   return (
-    <StyledCard sx={{width:{md:"250px"}}}>
+    <StyledCard sx={{ width: "100%" }}>
       <CardHeader title="Online Football Quiz" subheader="September 14, 2023" />
-      <CardMedia
-        component="img"
-        height="200"
-        image="https://tennisnb.ca/wp-content/uploads/2020/04/BLOG-2099x700-quizimage-natasaadzic-gettyimages-iStock-933914672-1200x400-1.jpg"
-      />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
           This impressive paella is a perfect party dish and a fun meal to cook
