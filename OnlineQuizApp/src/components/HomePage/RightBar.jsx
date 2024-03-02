@@ -13,7 +13,9 @@ function RightBar() {
   return (
     <StyledRightBar>
       <Box sx={{ display: { xs: "none", sm: "block" } }}>
-        <Typography variant="h4">Favorite Quizs</Typography>
+        <Typography sx={{ marginLeft: "50px" }} variant="h4">
+          Favorite Quizs
+        </Typography>
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           {/* This box true there?*/}
           <Avatar
@@ -24,7 +26,7 @@ function RightBar() {
             <FavoriteIcon />
           </Avatar>
         </Box>
-        <Box marginTop={3}>
+        <Box paddingLeft={"10px"} marginTop={3}>
           <FavoriteQuiz />
           <FavoriteQuiz />
           <FavoriteQuiz />
